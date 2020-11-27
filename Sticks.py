@@ -71,6 +71,7 @@ def get_num(number):
     text1.insert(END, f'Remainder after Artificial Intelligence:\t{amount}\n')     
     if amount == 0 or amount < 0:
         text1.insert(END, 'Amigo wins;)')
+        amount = random.randint(19, 30)
     if amount == 1:
         text1.insert(END, 'Sorry Amigo, but remainder 1. You lose!\n\t\t\tRestart?')
         amount = random.randint(19, 30)
