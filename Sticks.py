@@ -8,6 +8,7 @@ root.geometry('400x400+440+200')
 root.title('TakeSticks')
 root.resizable(False, False)
 
+
 pb = t.Progressbar(root, length=1000)
 pb.pack()
 pb.start(100)
@@ -17,23 +18,29 @@ pb.step(10)
 l1 = Label(text="Welcome to our game ;)", bg="#1F252A", fg='white', height=3, font='cursive, 15')
 l1.pack(fill=X)
 
+
 e = Entry(root, bg='black', fg='Teal')
 e.pack(fill=X)
 
+
 rules = messagebox.showinfo('Rules', 'The game is who takes the last stick is a loser.\nAccording to the rules, the player must take 1 to 3 sticks.\nA game starts with a random number.')
+
 
 text1=Text(root, font='cursive, 10', wrap=WORD, bg='black', fg='white')
 text1.pack(fill=BOTH, expand=True)
 
+
 scroll = Scrollbar(text1, command=text1.yview)
 scroll.pack(fill=Y, side=RIGHT)
 text1.config(yscrollcommand=scroll.set)
+
 
 def showEnd(event):
     text1.see(END)
     text1.edit_modified(END)
 
 text1.bind('<Motion>', showEnd)
+
 
 def quit():
     answer = messagebox.askokcancel('Exit', 'Are you sure?')
@@ -73,7 +80,9 @@ def start():
     if btn_start['text'] == 'Start':
         text1.insert(END, f'\nHow many sticks do you want to take Amigo?\n\tRandom number to start: {amount}!\n')
 
+
 pb.stop()
+
 
 def restart():
     text1.delete('1.0', END)
@@ -84,6 +93,7 @@ def restart():
 
 frame2=Frame(root, bg='#1F252A', bd=5)
 frame2.pack(fill=X)
+
 
 buttons = {'1': 1, '2': 2, '3': 3}
 
