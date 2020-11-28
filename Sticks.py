@@ -46,6 +46,8 @@ def quit():
     answer = messagebox.askokcancel('Exit', 'Are you sure?')
     if answer == True:
         root.destroy()
+
+        
 x = random.randint(13, 30)
 amount = round(random.randint(13, 30), 4*x+1)
 
